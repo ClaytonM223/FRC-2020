@@ -13,38 +13,23 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
-import frc.robot.commands.TankDrive;
-
 /**
  * Add your docs here.
  */
-public class DriveTrain extends Subsystem {
- private VictorSPX motorLeft1 = new VictorSPX(RobotMap.MOTOR_LEFT_1_ID);
- private VictorSPX motorLeft2 = new VictorSPX(RobotMap.MOTOR_LEFT_2_ID);
- private  VictorSPX motorRight1 = new VictorSPX(RobotMap.MOTOR_RIGHT_1_ID);
- private VictorSPX motorRight2 = new VictorSPX(RobotMap.MOTOR_RIGHT_2_ID);
-
+public class Transfer extends Subsystem {
+  private VictorSPX TransferBack = new VictorSPX(RobotMap.TRANSFER_BACK_ID);
+  private VictorSPX TransferFront = new VictorSPX(RobotMap.TRANSFER_FRONT_ID);
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new TankDrive ());
+    // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void setLeftMotors(double speed){
-    motorLeft1.set(ControlMode.PercentOutput, -speed);
-    motorLeft2.set(ControlMode.PercentOutput, -speed);
-  }    
-
-  public void setRightMotors(double speed){
-    motorRight1.set(ControlMode.PercentOutput, speed);
-    motorRight2.set(ControlMode.PercentOutput, speed);
+  public void SetTransferPower(double speeeeed) {
+    TransferBack.set(ControlMode.PercentOutput, speeeeed);
+    TransferFront.set(ControlMode.PercentOutput, -speeeeed);
   }
-
-  public void setMotor3(double speed){
-    motorLeft2.set(ControlMode.PercentOutput, -speed);
-  }    
-  
 }

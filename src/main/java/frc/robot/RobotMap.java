@@ -25,9 +25,13 @@ public class RobotMap {
   public static final int RIGHT_STICK_Y = 5;// stick number
   public static final int SHOOTER_ID = 0;
   public static final int COLLECTION_ID = 3; 
-  public static final int BUTTON_A_ID = 0;
-  public static final int BUTTON_B_ID = 1;
+  public static final int BUTTON_A_ID = 1;
+  public static final int BUTTON_B_ID = 2;
+  public static final int BUTTON_X_ID = 3;
   public static final int BUTTON_Y_ID = 4;
+  public static final int TRANSFER_BACK_ID = 0;
+  public static final int TRANSFER_FRONT_ID = 0;
+
 
  
   // none of the above numbers are known at this point and will be 0 until these numbers are 

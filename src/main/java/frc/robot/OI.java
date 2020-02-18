@@ -7,11 +7,12 @@
 
 package frc.robot;
 
-import javax.swing.JButton;
-
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+//import frc.robot.commands.MotorTest;
+//import frc.robot.commands.MotorTestStop;
+import frc.robot.commands.Move;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,9 +20,15 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 
-  private final XboxController driverController1 = new XboxController(RobotMap.DRIVER_CONTROLLER_1);
-  private final XboxController driverController2 = new XboxController(RobotMap.DRIVER_CONTROLLER_2);
-  public final Button aButton = new Button(driverController1, RobotMap.BUTTON_A_ID);
+  private static final XboxController driverController1 = new XboxController(RobotMap.DRIVER_CONTROLLER_1);
+  private static final XboxController driverController2 = new XboxController(RobotMap.DRIVER_CONTROLLER_2);
+  public static final Button bButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_B_ID);
+  public static final Button xButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_X_ID);
+  public static final Button yButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_Y_ID);
+  public static final Button aButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_A_ID);
+
+
+
 
   public double GetDriver1RawAxis(final int axis){ 
    return driverController1.getRawAxis(axis);
@@ -31,8 +38,16 @@ public class OI {
   }
 
   public OI(){
-    //xButton.whenPressed(new MoveSequence());
+   xButton2.whenPressed(new Move(0.7));
+   xButton2.whenReleased(new Move(0));
 
+   yButton2.whenPressed(new Move(-0.55));
+   yButton2.whenReleased(new Move(0));
+   
+
+    //xButton.whenPressed(new MoveSequence());
+    //xButton1.whenPressed(new MotorTest());
+    //xButton1.whenReleased(new MotorTestStop());
     // this code tells to robot to do whatever MoveSequence is when the xButton is pressed
   }
   //// CREATING BUTTONS
