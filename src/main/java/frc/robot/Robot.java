@@ -9,7 +9,12 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import frc.robot.subsystems.Collection;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.PullUp;
+import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.Transfer;
+import frc.robot.subsystems.WheelOFortune;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -20,6 +25,11 @@ import frc.robot.subsystems.DriveTrain;
  */
 public class Robot extends TimedRobot {
   public static DriveTrain driveTrain = new DriveTrain();
+  public static Collection collection = new Collection();
+  public static Transfer transfer = new Transfer();
+  public static WheelOFortune wheelOFortune = new WheelOFortune();
+  public static Shooter shooter = new Shooter();
+  public static PullUp pullUp = new PullUp();
 
   public static OI m_oi;
 

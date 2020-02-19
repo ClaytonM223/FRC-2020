@@ -8,9 +8,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class BringIt extends Command {
+  double m_Speed;
+
+
+
   public BringIt() { 
+    requires(Robot.collection);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }

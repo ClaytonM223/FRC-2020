@@ -15,9 +15,8 @@ import frc.robot.RobotMap;
 /**
  * Add your docs here.
  */
-public class Shooter extends Subsystem {
-  private VictorSPX leftShooter = new VictorSPX(RobotMap.LEFT_SHOOTER_ID);
-  private VictorSPX rightShooter = new VictorSPX(RobotMap.RIGHT_SHOOTER_ID);
+public class WheelOFortune extends Subsystem {
+  private VictorSPX fortunateMotor = new VictorSPX(RobotMap.WHEEL_MOTOR_ID);
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
@@ -26,8 +25,8 @@ public class Shooter extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-  public void setShooterSpeed(double speed){
-    leftShooter.set(ControlMode.PercentOutput, speed);
-    rightShooter.set(ControlMode.PercentOutput, -speed);
+
+  public void setWheelSpeed(double speed){
+    fortunateMotor.set(ControlMode.PercentOutput, speed);
   }
 }

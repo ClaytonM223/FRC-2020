@@ -9,9 +9,9 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.BringIt;
 
 /**
  * Add your docs here.
@@ -23,6 +23,7 @@ public class Collection extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
+    setDefaultCommand(new BringIt ());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }

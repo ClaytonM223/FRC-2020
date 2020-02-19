@@ -14,35 +14,57 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-
-	public static final int MOTOR_LEFT_1_ID = 2;// motor controller ID number
-	public static final int MOTOR_LEFT_2_ID = 3;// motor controler ID number
-	public static final int MOTOR_RIGHT_1_ID = 0;// motor controller ID number
-	public static final int MOTOR_RIGHT_2_ID = 1;// motor controller ID number
-  public static final int DRIVER_CONTROLLER_1 = 0;// controller port
-  public static final int DRIVER_CONTROLLER_2 = 1;// controller port 
-	public static final int LEFT_STICK_Y = 1;// stick number
-  public static final int RIGHT_STICK_Y = 5;// stick number
-  public static final int SHOOTER_ID = 0;
-  public static final int COLLECTION_ID = 3; 
-  public static final int BUTTON_A_ID = 1;
-  public static final int BUTTON_B_ID = 2;
-  public static final int BUTTON_X_ID = 3;
-  public static final int BUTTON_Y_ID = 4;
+  //Driver controller 1
+  public static final int DRIVER_CONTROLLER_1 = 0;
+  public static final int LEFT_STICK1_Y = 1;
+  public static final int RIGHT_STICK1_Y = 5;
+  public static final int BUTTON1_A_ID = 1;
+  public static final int BUTTON1_Y_ID = 2;
+  public static final int BUTTON1_X_ID = 3;
+  public static final int BUTTON1_B_ID = 4; 
+  //Driver controller 2
+  public static final int DRIVER_CONTROLLER_2 = 1;
+  public static final int BUTTON2_A_ID = 1;
+  public static final int BUTTON2_B_ID = 2;
+  public static final int BUTTON2_X_ID = 3;
+  public static final int BUTTON2_Y_ID = 4;
+  //Drive train
+  public static final int MOTOR_LEFT_1_ID = 2;
+	public static final int MOTOR_LEFT_2_ID = 3;
+	public static final int MOTOR_RIGHT_1_ID = 0;
+	public static final int MOTOR_RIGHT_2_ID = 1;
+  //Transfer
   public static final int TRANSFER_BACK_ID = 0;
   public static final int TRANSFER_FRONT_ID = 0;
+  //Wheel of fortune
+  public static final int WHEEL_MOTOR_ID = 0;
+  //Shooter
+  public static final int RIGHT_SHOOTER_ID = 0;
+  public static final int LEFT_SHOOTER_ID = 0;
+  //Collection
+  public static final int COLLECTION_ID = 3;
+  //Pull-up 
+  public static final int PULLUP_LEFT_ID = 0;
+  public static final int PULLUP_RIGHT_ID = 0;
 
 
- 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   // none of the above numbers are known at this point and will be 0 until these numbers are 
   //found using the phenox tuner !!!!!!!!!!
-
-  // For example to map the left and right motors, you could define the
-  // following variables to use with your drivetrain subsystem.
-  // public static int leftMotor = 1;
-  // public static int rightMotor = 2;
-  // If you are using multiple modules, make sure to define both the port
-  // number and the module. For example you with a rangefinder:
-  // public static int rangefinderPort = 1;
-  // public static int rangefinderModule = 1;
 }

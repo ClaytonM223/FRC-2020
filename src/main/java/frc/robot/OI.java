@@ -10,22 +10,26 @@ package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-//import frc.robot.commands.MotorTest;
-//import frc.robot.commands.MotorTestStop;
-import frc.robot.commands.Move;
+import frc.robot.commands.MotorTesting;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-
+  //Driver controller 1
   private static final XboxController driverController1 = new XboxController(RobotMap.DRIVER_CONTROLLER_1);
+  public static final Button bButton1 = new JoystickButton(driverController1, RobotMap.BUTTON1_B_ID);
+  public static final Button xButton1 = new JoystickButton(driverController1, RobotMap.BUTTON1_X_ID);
+  public static final Button yButton1 = new JoystickButton(driverController1, RobotMap.BUTTON1_Y_ID);
+  public static final Button aButton1 = new JoystickButton(driverController1, RobotMap.BUTTON1_A_ID);
+  //Driver controller 2
   private static final XboxController driverController2 = new XboxController(RobotMap.DRIVER_CONTROLLER_2);
-  public static final Button bButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_B_ID);
-  public static final Button xButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_X_ID);
-  public static final Button yButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_Y_ID);
-  public static final Button aButton2 = new JoystickButton(driverController2, RobotMap.BUTTON_A_ID);
+  public static final Button bButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_B_ID);
+  public static final Button xButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_X_ID);
+  public static final Button yButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_Y_ID);
+  public static final Button aButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_A_ID);
 
 
 
@@ -38,17 +42,17 @@ public class OI {
   }
 
   public OI(){
-   xButton2.whenPressed(new Move(0.7));
-   xButton2.whenReleased(new Move(0));
+   xButton2.whenPressed(new MotorTesting(0.7));
+   xButton2.whenReleased(new MotorTesting(0));
 
-   yButton2.whenPressed(new Move(-0.55));
-   yButton2.whenReleased(new Move(0));
+   yButton2.whenPressed(new MotorTesting(-0.55));
+   yButton2.whenReleased(new MotorTesting(0));
    
 
-    //xButton.whenPressed(new MoveSequence());
+    //xButton.whenPressed(new MogveSequence());
     //xButton1.whenPressed(new MotorTest());
     //xButton1.whenReleased(new MotorTestStop());
-    // this code tells to robot to do whatever MoveSequence is when the xButton is pressed
+    // this code tells to robot to do whatever MovgeSequence is when the xButton is pressed
   }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
