@@ -10,8 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.MotorTesting;
-
+import frc.robot.commands.FortunateWheel;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -31,6 +30,7 @@ public class OI {
   public static final Button yButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_Y_ID);
   public static final Button aButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_A_ID);
 
+  public static final Button leftBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER2_ID);
 
 
 
@@ -42,11 +42,13 @@ public class OI {
   }
 
   public OI(){
-   xButton2.whenPressed(new MotorTesting(0.7));
-   xButton2.whenReleased(new MotorTesting(0));
+   //xButton2.whenPressed(new MotorTesting(0.7));
+   //xButton2.whenReleased(new MotorTesting(0));
 
-   yButton2.whenPressed(new MotorTesting(-0.55));
-   yButton2.whenReleased(new MotorTesting(0));
+   //yButton2.whenPressed(new MotorTesting(-0.55));
+   //yButton2.whenReleased(new MotorTesting(0));
+  xButton2.whenPressed(new FortunateWheel(1));
+  xButton2.whenReleased(new FortunateWheel(0));
    
 
     //xButton.whenPressed(new MogveSequence());

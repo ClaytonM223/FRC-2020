@@ -23,7 +23,7 @@ public class Collection extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new BringIt ());
+    setDefaultCommand(new BringIt());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }

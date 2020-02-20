@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class UpYaGoBall extends Command {
   public UpYaGoBall() {
@@ -25,6 +26,12 @@ public class UpYaGoBall extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double rightTrigger = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_TRIG2_ID);
+
+    if (rightTrigger > 0.1) {
+      Robot.transfer.setTransferPower(0.2);
+    } else {      Robot.shooter.setShooterSpeed(0);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

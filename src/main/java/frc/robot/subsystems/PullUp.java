@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.Lift;
 
 /**
  * Add your docs here.
@@ -23,10 +24,11 @@ public class PullUp extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
+    setDefaultCommand(new Lift());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-  public void setPullUpSpeed(double speed){
+  public void setLiftSpeed(double speed){
     pullUpLeft.set(ControlMode.PercentOutput, speed);
     pullUpRight.set(ControlMode.PercentOutput, speed);
   }

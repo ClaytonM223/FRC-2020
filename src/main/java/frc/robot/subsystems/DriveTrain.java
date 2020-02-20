@@ -40,9 +40,4 @@ public class DriveTrain extends Subsystem {
     motorRight1.set(ControlMode.PercentOutput, speed);
     motorRight2.set(ControlMode.PercentOutput, speed);
   }
-
-  public void setMotor3(double speed){
-    motorLeft2.set(ControlMode.PercentOutput, -speed);
-  }    
-  
 }

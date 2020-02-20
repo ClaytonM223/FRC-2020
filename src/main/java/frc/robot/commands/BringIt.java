@@ -9,11 +9,10 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class BringIt extends Command {
   double m_Speed;
-
-
 
   public BringIt() { 
     requires(Robot.collection);
@@ -29,6 +28,17 @@ public class BringIt extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double leftTrigger = Robot.m_oi.GetDriver2Rawaxis(RobotMap.RIGHT_TRIG2_ID);
+    boolean leftbumper =  Robot.m_oi.leftBumper2.get();
+
+
+    if (leftTrigger > 0.1) {
+      Robot.collection.setMotorSpeed(0.7);
+    } else if (leftbumper) {     
+      Robot.collection.setMotorSpeed(-0.55);
+    } else {
+      Robot.collection.setMotorSpeed(0);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -40,6 +50,7 @@ public class BringIt extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.wheelOFortune.setWheelSpeed(0);
   }
 
   // Called when another command which requires one or more of the same

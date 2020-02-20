@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class SendIt extends Command {
   public SendIt() {
@@ -25,6 +26,12 @@ public class SendIt extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    double rightTrigger = Robot.m_oi.GetDriver2Rawaxis(RobotMap.RIGHT_TRIG2_ID);
+
+    if (rightTrigger > 0.1) {
+      Robot.shooter.setShooterSpeed(1);
+    } else {      Robot.shooter.setShooterSpeed(0);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

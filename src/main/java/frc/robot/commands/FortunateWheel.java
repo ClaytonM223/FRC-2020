@@ -10,25 +10,30 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
+public class FortunateWheel extends Command {
+  double m_Speed;
+  // this sets it so that in the MoveSequence you will put numbers in place of these
+  // variables like this
+  // addSequential(new Move(2, 0.5, 0.5));
+  // in this case m_time is 2, m_lSpeed is 0.5, and m_rSpeed is also 0.5
 
-public class Lift extends Command {
-  public Lift() {
-    requires(Robot.pullUp);
+
+  public FortunateWheel(double speed) {
+    m_Speed = speed;
+
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.driveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.wheelOFortune.setWheelSpeed(m_Speed);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //double leftStickY = Robot.m_oi.GetDriver2Rawaxis(RobotMap.LEFT_STICK2_Y);
-
-    //Robot.pullUp.setLiftSpeed(leftStickY);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -40,6 +45,8 @@ public class Lift extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.wheelOFortune.setWheelSpeed(0);
+   
   }
 
   // Called when another command which requires one or more of the same

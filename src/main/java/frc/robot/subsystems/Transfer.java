@@ -27,8 +27,8 @@ public class Transfer extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void SetTransferPower(double speeeeed) {
+  public void setTransferPower(double speeeeed) {
     TransferBack.set(ControlMode.PercentOutput, speeeeed);
-    TransferFront.set(ControlMode.PercentOutput, -speeeeed);
+    TransferFront.set(ControlMode.PercentOutput, speeeeed);
   }
 }
