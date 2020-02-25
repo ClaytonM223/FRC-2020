@@ -34,7 +34,8 @@ public class RobotMap {
   public static final int BUTTON2_B_ID = 2;
   public static final int BUTTON2_X_ID = 3;
   public static final int BUTTON2_Y_ID = 4;
-  public static final int BUMPER2_ID = 5;
+  public static final int BUMPER_LEFT_2_ID = 5;
+  public static final int BUMPER_RIGHT_2_ID =6;
 
   //Drive train
   public static final int MOTOR_LEFT_1_ID = 4;
@@ -54,6 +55,8 @@ public class RobotMap {
   //Pull-up 
   public static final int PULLUP_LEFT_ID = 10;
   public static final int PULLUP_RIGHT_ID = 11;
+public static final int LEFT_STICK1_X = 0;
+public static final int RIGHT_STICK1_X = 0;
 
 
   

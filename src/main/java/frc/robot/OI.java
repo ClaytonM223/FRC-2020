@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.FortunateWheel;
+import frc.robot.commands.Lift;
+import frc.robot.commands.UpYaGoBall;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -30,18 +32,25 @@ public class OI {
   public static final Button yButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_Y_ID);
   public static final Button aButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_A_ID);
 
-  public static final Button leftBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER2_ID);
+  public final Button leftBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER_LEFT_2_ID);
+  public final Button rightBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER_RIGHT_2_ID);
 
 
 
   public double GetDriver1RawAxis(final int axis){ 
    return driverController1.getRawAxis(axis);
   }
-  public double GetDriver2Rawaxis(final int axis){
+  public double GetDriver2RawAxis(final int axis){
     return driverController2.getRawAxis(axis);
   }
 
   public OI(){
+    aButton2.whenPressed(new UpYaGoBall(0.5));
+    aButton2.whenReleased(new UpYaGoBall(0));
+    bButton2.whenPressed(new Lift(1));
+    bButton2.whenReleased(new Lift(0));
+    yButton2.whenPressed(new UpYaGoBall(-0.5));
+    yButton2.whenReleased(new UpYaGoBall(0));
    //xButton2.whenPressed(new MotorTesting(0.7));
    //xButton2.whenReleased(new MotorTesting(0));
 
@@ -49,6 +58,9 @@ public class OI {
    //yButton2.whenReleased(new MotorTesting(0));
   xButton2.whenPressed(new FortunateWheel(1));
   xButton2.whenReleased(new FortunateWheel(0));
+
+  //aButton2.whenPressed(new UpYaGoBall(0.2));
+  //aButton2.whenReleased(new UpYaGoBall(0));
    
 
     //xButton.whenPressed(new MogveSequence());

@@ -24,7 +24,7 @@ public class PullUp extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new Lift());
+    setDefaultCommand(new Lift(0));
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }

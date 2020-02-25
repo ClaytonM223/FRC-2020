@@ -7,56 +7,34 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class SendIt extends Command {
-  public SendIt() {
-    requires(Robot.shooter);
+public class Wait extends Command {
+  double m_time;
+  public Wait(double m_time) {
+    m_time = 0.3;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
 
-  // Called just before this Command runs the first time
+  public Wait() {
+}
+
+// Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    setTimeout(m_time);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double rightTrigger = Robot.m_oi.GetDriver2RawAxis(RobotMap.RIGHT_TRIG2_ID);
-
-    /*while (rightTrigger > 0.1) {
-      Robot.shooter.setShooterSpeed(1);
-      Timer.delay(0.3);
-      Robot.transfer.setTransferPower(0.5);
-
-    }
-
-    Robot.shooter.setShooterSpeed(0);*/
-
-
-    if (rightTrigger > 0.1) {
-      Robot.shooter.setShooterSpeed(1);
-    
-      if (isTimedOut()){
-        Robot.transfer.setTransferPower(0.5);
-      }else {
-        Robot.transfer.setTransferPower(0);
-      }
-    } else {
-      Robot.shooter.setShooterSpeed(0);
-    } 
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    
-    return false;
+    return isTimedOut();
   }
 
   // Called once after isFinished returns true

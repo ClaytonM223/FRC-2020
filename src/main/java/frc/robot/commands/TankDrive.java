@@ -27,7 +27,7 @@ public class TankDrive extends Command {
   @Override
   protected void execute() {
     double leftStickY = Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y);
-    double rightStickY = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_Y);
+    double rightStickY = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X);
 
     Robot.driveTrain.setLeftMotors(leftStickY);
     Robot.driveTrain.setRightMotors(rightStickY);

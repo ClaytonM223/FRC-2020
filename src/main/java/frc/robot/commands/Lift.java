@@ -12,7 +12,9 @@ import frc.robot.Robot;
 
 
 public class Lift extends Command {
-  public Lift() {
+  double m_speed;
+  public Lift(double speed) {
+    m_speed = speed;
     requires(Robot.pullUp);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -26,6 +28,7 @@ public class Lift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.pullUp.setLiftSpeed(m_speed);
     //double leftStickY = Robot.m_oi.GetDriver2Rawaxis(RobotMap.LEFT_STICK2_Y);
 
     //Robot.pullUp.setLiftSpeed(leftStickY);
