@@ -17,7 +17,9 @@ public class RobotMap {
   //Driver controller 1
   public static final int DRIVER_CONTROLLER_1 = 0;
   public static final int LEFT_STICK1_Y = 1;
+  public static final int LEFT_STICK1_X = 0;//need to find
   public static final int RIGHT_STICK1_Y = 5;
+  public static final int RIGHT_STICK1_X = 0;//need to find
   public static final int LEFT_TRIG1_ID = 2;
   public static final int RIGHT_TRIG1_ID = 3;
   public static final int BUTTON1_A_ID = 1;
@@ -27,7 +29,9 @@ public class RobotMap {
   //Driver controller 2
   public static final int DRIVER_CONTROLLER_2 = 1;
   public static final int LEFT_STICK2_Y = 1;
+  public static final int LEFT_STICK2_X = 0;//need to find
   public static final int RIGHT_STICK2_Y = 5;
+  public static final int RIGHT_STICK2_X = 0;//need to find
   public static final int LEFT_TRIG2_ID = 2;
   public static final int RIGHT_TRIG2_ID = 3;
   public static final int BUTTON2_A_ID = 1;
@@ -55,8 +59,7 @@ public class RobotMap {
   //Pull-up 
   public static final int PULLUP_LEFT_ID = 10;
   public static final int PULLUP_RIGHT_ID = 11;
-public static final int LEFT_STICK1_X = 0;
-public static final int RIGHT_STICK1_X = 0;
+
 
 
   
