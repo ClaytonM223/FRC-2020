@@ -41,12 +41,6 @@ public class SendIt extends Command {
 
     if (rightTrigger > 0.1) {
       Robot.shooter.setShooterSpeed(1);
-    
-      if (isTimedOut()){
-        Robot.transfer.setTransferPower(0.5);
-      }else {
-        Robot.transfer.setTransferPower(0);
-      }
     } else {
       Robot.shooter.setShooterSpeed(0);
     } 

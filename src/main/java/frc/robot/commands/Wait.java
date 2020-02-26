@@ -8,32 +8,33 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class ArcadeDrive extends Command {
-  public ArcadeDrive() {
+public class Wait extends Command {
+  double m_time;
+  public Wait(double m_time) {
+    m_time = 0.3;
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.driveTrain2);
+    // eg. requires(chassis);
   }
 
-  // Called just before this Command runs the first time
+  public Wait() {
+}
+
+// Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    setTimeout(m_time);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double Move = -Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y);
-    double Turn = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X);
-    Robot.driveTrain2.manualDrive(Move, Turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return isTimedOut();
   }
 
   // Called once after isFinished returns true

@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.Collection;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.DriveTrain2;
 import frc.robot.subsystems.PullUp;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Transfer;
@@ -32,6 +33,7 @@ public class Robot extends TimedRobot {
   public static WheelOFortune wheelOFortune = new WheelOFortune();
   public static Shooter shooter = new Shooter();
   public static PullUp pullUp = new PullUp();
+  public static DriveTrain2 driveTrain2 = new DriveTrain2();
 
   public static OI m_oi;
 
