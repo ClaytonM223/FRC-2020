@@ -21,15 +21,20 @@ public class PullUp extends Subsystem {
   private VictorSPX pullUpRight = new VictorSPX(RobotMap.PULLUP_RIGHT_ID);
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  public void setLeftLift(double speed){
+    pullUpLeft.set(ControlMode.PercentOutput, speed);
+  }
+
+  public void setRightLift(double speed){
+    pullUpRight.set(ControlMode.PercentOutput, speed);
+  }
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new Lift(0));
+    setDefaultCommand(new Lift());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-  public void setLiftSpeed(double speed){
-    pullUpLeft.set(ControlMode.PercentOutput, speed);
-    pullUpRight.set(ControlMode.PercentOutput, speed);
-  }
+  
+
 }

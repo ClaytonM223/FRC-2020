@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.FortunateWheel;
-import frc.robot.commands.Lift;
 import frc.robot.commands.UpYaGoBall;
 
 /**
@@ -47,8 +46,6 @@ public class OI {
   public OI(){
     aButton2.whenPressed(new UpYaGoBall(0.5));
     aButton2.whenReleased(new UpYaGoBall(0));
-    bButton2.whenPressed(new Lift(1));
-    bButton2.whenReleased(new Lift(0));
     yButton2.whenPressed(new UpYaGoBall(-0.5));
     yButton2.whenReleased(new UpYaGoBall(0));
    //xButton2.whenPressed(new MotorTesting(0.7));
