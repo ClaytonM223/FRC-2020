@@ -9,9 +9,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-//import frc.robot.RobotMap;
-import frc.robot.RobotMap;
-//import frc.robot.subsystems.Shooter;
 
 public class UpYaGoBall extends Command {
   double m_speed;
@@ -31,17 +28,21 @@ public class UpYaGoBall extends Command {
   @Override
   protected void execute() {
     Robot.transfer.setTransferPower(m_speed);
-    //double rightTrigger = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_TRIG2_ID);
-    //boolean rightBumper = Robot.m_oi.rightBumper2.get();
-    //Robot.transfer.setTransferPower(double speed);
+    // double rightTrigger = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_TRIG2_ID);
+    // boolean rightBumper = Robot.m_oi.rightBumper2.get();
+    // Robot.transfer.setTransferPower(double speed);
+    //double rightTrigger = Robot.m_oi.GetDriver2RawAxis(RobotMap.RIGHT_TRIG2_ID);
 
-    
-    double rightTrigger = Robot.m_oi.GetDriver2RawAxis(RobotMap.RIGHT_TRIG2_ID);
-
-    if (rightTrigger > 0.1) {
-      Robot.shooter.setShooterSpeed(1);
-    } else {      Robot.shooter.setShooterSpeed(0);
-    }
+   // if (rightTrigger > 0.1) {
+    //  new Thread() {
+    //    public void run() {
+    //      Robot.shooter.setShooterSpeed(1);
+     //     Thread.sleep(300);
+    //      Robot.transfer.setTransferPower(0.5);
+    //    }.start();
+    //  };
+    //} else {      Robot.shooter.setShooterSpeed(0);
+    //}
 
   // if (rightTrigger > 0.1) {
    //   Robot.transfer.setTransferPower(0.2);

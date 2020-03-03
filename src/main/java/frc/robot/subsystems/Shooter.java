@@ -11,7 +11,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.SendIt;
+//import frc.robot.commands.SendIt;
+import frc.robot.commands.ShooterCombo;
 
 /**
  * Add your docs here.
@@ -25,7 +26,7 @@ public class Shooter extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new SendIt());
+    setDefaultCommand(new ShooterCombo());
   }
   public void setShooterSpeed(double speed){
     leftShooter.set(ControlMode.PercentOutput, speed);

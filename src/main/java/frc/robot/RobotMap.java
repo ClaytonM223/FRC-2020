@@ -55,6 +55,7 @@ public class RobotMap {
   public static final int RIGHT_SHOOTER_ID = 8;
   public static final int LEFT_SHOOTER_ID = 9;
   //Collection
+  
   public static final int COLLECTION_ID = 7;
   //Pull-up 
   public static final int PULLUP_LEFT_ID = 10;

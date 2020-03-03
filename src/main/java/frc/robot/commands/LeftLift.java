@@ -9,10 +9,11 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class Lift extends Command {
-  public Lift() {
+public class LeftLift extends Command {
+  double m_lspeed;
+  public LeftLift(double speed) {
+    m_lspeed = speed;
     requires(Robot.pullUp);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -26,11 +27,7 @@ public class Lift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-  double m_lspeed = Math.abs(Robot.m_oi.GetDriver2RawAxis(RobotMap.LEFT_STICK2_Y));
-  double m_rspeed = Math.abs(Robot.m_oi.GetDriver2RawAxis(RobotMap.RIGHT_STICK2_Y));
-
     Robot.pullUp.setLeftLiftSpeed(m_lspeed);
-    Robot.pullUp.setRightLiftSpeed(m_rspeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()

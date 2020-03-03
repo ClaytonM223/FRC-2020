@@ -11,7 +11,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.UpYaGoBall;
+import frc.robot.commands.ShooterCombo;
+//import frc.robot.commands.UpYaGoBall;
 
 /**
  * Add your docs here.
@@ -24,7 +25,7 @@ public class Transfer extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new UpYaGoBall(0));
+    setDefaultCommand(new ShooterCombo());
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
