@@ -33,9 +33,9 @@ public class BringIt extends Command {
 
 
     if (leftTrigger > 0.1) {
-      Robot.collection.setMotorSpeed(0.75);
+      Robot.collection.setMotorSpeed(RobotMap.COLLECTION_IN_SPEED);
     } else if (leftbumper) {     
-      Robot.collection.setMotorSpeed(-0.55);
+      Robot.collection.setMotorSpeed(RobotMap.COLLECTION_OUT_SPEED);
     } else {
       Robot.collection.setMotorSpeed(0);
     }
