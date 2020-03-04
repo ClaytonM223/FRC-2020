@@ -40,7 +40,7 @@ public class SendIt extends Command {
 
 
     if (rightTrigger > 0.1) {
-      Robot.shooter.setShooterSpeed(1);
+      Robot.shooter.setShooterSpeed(RobotMap.SHOOTER_SPEED);
     } else {
       Robot.shooter.setShooterSpeed(0);
     } 
