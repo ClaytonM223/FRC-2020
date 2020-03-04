@@ -44,9 +44,9 @@ public class OI {
   }
 
   public OI(){
-    aButton2.whenPressed(new UpYaGoBall(0.5));
+    aButton2.whenPressed(new UpYaGoBall(RobotMap.TRANSFER_SPEED));
     aButton2.whenReleased(new UpYaGoBall(0));
-    yButton2.whenPressed(new FortunateWheel(1));
+    yButton2.whenPressed(new FortunateWheel(RobotMap.WHEEL_OF_FORTUINE_SPEED));
     yButton2.whenReleased(new FortunateWheel(0));
 
   //aButton2.whenPressed(new UpYaGoBall(0.2));
