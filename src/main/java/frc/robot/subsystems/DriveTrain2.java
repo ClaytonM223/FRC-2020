@@ -41,10 +41,10 @@ public class DriveTrain2 extends Subsystem {
  //here. Call these from Commands.
 
   public void manualDrive(double Move, double Turn){
-    if (Math.abs(Move) < 0.1){
+    if (Math.abs(Move) < 0.025){
       Move = 0;
     }
-    if (Math.abs(Turn) < 0.1){
+    if (Math.abs(Turn) < 0.05){
       Turn = 0;
     }
 

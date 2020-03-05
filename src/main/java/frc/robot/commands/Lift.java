@@ -26,8 +26,8 @@ public class Lift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-  double m_lspeed = Math.abs(Robot.m_oi.GetDriver2RawAxis(RobotMap.LEFT_STICK2_Y));
-  double m_rspeed = Math.abs(Robot.m_oi.GetDriver2RawAxis(RobotMap.RIGHT_STICK2_Y));
+  double m_lspeed = Math.abs(Robot.m_oi.GetDriver2RawAxis(RobotMap.RIGHT_STICK2_Y));
+  double m_rspeed = Math.abs(Robot.m_oi.GetDriver2RawAxis(RobotMap.LEFT_STICK2_Y));
 
     Robot.pullUp.setLeftLiftSpeed(m_lspeed);
     Robot.pullUp.setRightLiftSpeed(m_rspeed);

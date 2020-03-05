@@ -68,10 +68,11 @@ public class RobotMap {
   public static final int PULLUP_RIGHT_ID = 11;
 
   //Motor speeds
-  public static final int TRANSFER_SPEED = 0.5;
+  public static final double TRANSFER_IN_SPEED = 0.5;
+  public static final double TRANSFER_OUT_SPEED = -0.5;
   public static final int SHOOTER_SPEED = 1;
-  public static final int COLLECTION_IN_SPEED = 0.75;
-  public static final int COLLECTION_OUT_SPEED = -0.55;
+  public static final double COLLECTION_IN_SPEED = 0.9;
+  public static final double COLLECTION_OUT_SPEED = -0.7;
   public static final int LEFT_LIFT_SPEED = 1;
   public static final int RIGHT_LIFT_SPEED = 1;
   public static final int WHEEL_OF_FORTUINE_SPEED = 1;

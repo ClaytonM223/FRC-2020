@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.FortunateWheel;
 
 /**
  * Add your docs here.
@@ -22,7 +23,7 @@ public class WheelOFortune extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    //setDefaultCommand(new FortunateWheel());
+    setDefaultCommand(new FortunateWheel(0));
     // Set the default command for a subsystem here.
   }
 

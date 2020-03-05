@@ -12,7 +12,6 @@ import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 public class BringIt extends Command {
-  double m_Speed;
 
   public BringIt() { 
     requires(Robot.collection);

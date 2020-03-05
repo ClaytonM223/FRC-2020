@@ -8,13 +8,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class ArcadeDrive extends Command {
-  public ArcadeDrive() {
+public class SlowButton extends Command {
+  public SlowButton() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.driveTrain2);
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -25,9 +23,6 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double Move = -Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y) * Math.abs(Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y))* Math.abs(Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y))* Math.abs(Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y));
-    double Turn = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X) * Math.abs(Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X))* Math.abs(Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X))* Math.abs(Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X));
-    Robot.driveTrain2.manualDrive(Move, Turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()
