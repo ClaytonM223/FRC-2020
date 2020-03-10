@@ -9,7 +9,9 @@ package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import frc.robot.commands.AutoGroup;
 import frc.robot.subsystems.Collection;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.DriveTrain2;
@@ -28,6 +30,7 @@ import frc.robot.subsystems.WheelOFortune;
  * project.
  */
 public class Robot extends TimedRobot {
+  Command autonomousCommand;
   public static DriveTrain driveTrain = new DriveTrain();
   public static Collection collection = new Collection();
   public static Transfer transfer = new Transfer();
@@ -46,7 +49,9 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    CameraServer.getInstance().startAutomaticCapture();
+    autonomousCommand = new AutoGroup();
+    CameraServer.getInstance().startAutomaticCapture(0);
+    CameraServer.getInstance().startAutomaticCapture(1);
   }
 
   /**
@@ -88,6 +93,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+    autonomousCommand.start();
+    
+    
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -105,10 +113,12 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
+  
   }
 
   @Override
   public void teleopInit() {
+      autonomousCommand.cancel();
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove

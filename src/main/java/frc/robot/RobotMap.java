@@ -76,6 +76,7 @@ public class RobotMap {
   public static final int LEFT_LIFT_SPEED = 1;
   public static final int RIGHT_LIFT_SPEED = 1;
   public static final int WHEEL_OF_FORTUINE_SPEED = 1;
+  public static final double AUTO_SHOOTER_SPEED = 1;
   
   
 
