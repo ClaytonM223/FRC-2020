@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -30,10 +31,8 @@ public class OI {
   public static final Button xButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_X_ID);
   public static final Button yButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_Y_ID);
   public static final Button aButton2 = new JoystickButton(driverController2, RobotMap.BUTTON2_A_ID);
-
-  public final Button leftBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER_LEFT_2_ID);
-  public final Button rightBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER_RIGHT_2_ID);
-
+  public static final Button leftBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER_LEFT_2_ID);
+  public static final Button rightBumper2 = new JoystickButton(driverController2, RobotMap.BUMPER_RIGHT_2_ID);
 
 
   public double GetDriver1RawAxis(final int axis){ 
@@ -50,7 +49,7 @@ public class OI {
     bButton2.whenReleased(new UpYaGoBall(0));
     yButton2.whenPressed(new FortunateWheel(RobotMap.WHEEL_OF_FORTUINE_SPEED));
     yButton2.whenReleased(new FortunateWheel(0));
-
+    
   //aButton2.whenPressed(new UpYaGoBall(0.2));
   //aButton2.whenReleased(new UpYaGoBall(0));
    

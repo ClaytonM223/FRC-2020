@@ -9,10 +9,9 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.AutoGroup;
+//import frc.robot.commands.TankDrive;
 
 /**
  * Add your docs here.
@@ -27,19 +26,18 @@ public class DriveTrain extends Subsystem {
   // here. Call these from Commands.
 
   @Override
-  public void initDefaultCommand() {
-    setDefaultCommand(new AutoGroup());
+  public void initDefaultCommand(){
     // Set the default command for a subsystem here.
     //setDefaultCommand(new TankDrive ());
   }
 
   public void setLeftMotors(double speed){
-    motorLeft1.set(ControlMode.PercentOutput, speed);
-    motorLeft2.set(ControlMode.PercentOutput, speed);
+    motorLeft1.set(ControlMode.PercentOutput, -speed);
+    motorLeft2.set(ControlMode.PercentOutput, -speed);
   }    
 
   public void setRightMotors(double speed){
-    motorRight1.set(ControlMode.PercentOutput, -speed);
-    motorRight2.set(ControlMode.PercentOutput, -speed);
+    motorRight1.set(ControlMode.PercentOutput, speed);
+    motorRight2.set(ControlMode.PercentOutput, speed);
   }
 }

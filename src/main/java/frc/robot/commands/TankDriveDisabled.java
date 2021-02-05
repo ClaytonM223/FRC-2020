@@ -5,29 +5,37 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+
+
+/*
+
+
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
-public class ArcadeDrive extends Command {
-  public ArcadeDrive() {
+public class TankDrive extends Command {
+  public TankDrive() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.driveTrain2);
+    requires(Robot.driveTrain);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double Move = -Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y); 
-    double Turn = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X); 
-    Robot.driveTrain2.manualDrive(Move, Turn);
+    double leftStickY = Robot.m_oi.GetDriver1RawAxis(RobotMap.LEFT_STICK1_Y);
+    double rightStickY = Robot.m_oi.GetDriver1RawAxis(RobotMap.RIGHT_STICK1_X);
+
+    Robot.driveTrain.setLeftMotors(leftStickY);
+    Robot.driveTrain.setRightMotors(rightStickY);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -39,6 +47,8 @@ public class ArcadeDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.driveTrain.setLeftMotors(0);
+    Robot.driveTrain.setRightMotors(0);
   }
 
   // Called when another command which requires one or more of the same
@@ -47,3 +57,9 @@ public class ArcadeDrive extends Command {
   protected void interrupted() {
   }
 }
+
+
+
+
+
+*/
