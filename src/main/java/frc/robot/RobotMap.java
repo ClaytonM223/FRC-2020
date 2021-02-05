@@ -76,27 +76,8 @@ public class RobotMap {
   public static final int LEFT_LIFT_SPEED = 1;
   public static final int RIGHT_LIFT_SPEED = 1;
   public static final int WHEEL_OF_FORTUINE_SPEED = 1;
-  public static final double AUTO_SHOOTER_SPEED = 1;
-  
-  
+ //found using the phenox tuner !!!!!!!!!!
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-   
-  
-  
-  
-  
-  
-  
-  // none of the above numbers are known at this point and will be 0 until these numbers are 
-  //found using the phenox tuner !!!!!!!!!!
+ //Air Compressor
+ public static final int COMPRESSOR_ID = 0;
 }

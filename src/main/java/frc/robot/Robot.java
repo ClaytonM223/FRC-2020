@@ -8,10 +8,10 @@
 package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
+//import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import frc.robot.commands.AutoGroup;
 import frc.robot.subsystems.Collection;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.DriveTrain2;
@@ -30,7 +30,6 @@ import frc.robot.subsystems.WheelOFortune;
  * project.
  */
 public class Robot extends TimedRobot {
-  Command autonomousCommand;
   public static DriveTrain driveTrain = new DriveTrain();
   public static Collection collection = new Collection();
   public static Transfer transfer = new Transfer();
@@ -39,9 +38,11 @@ public class Robot extends TimedRobot {
   public static PullUp pullUp = new PullUp();
   public static DriveTrain2 driveTrain2 = new DriveTrain2();
 
+
   public static OI m_oi;
 
-
+  private double startTime;
+  //private Compressor compressor = new Compressor(RobotMap.COMPRESSOR_ID);
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -49,9 +50,9 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    autonomousCommand = new AutoGroup();
-    CameraServer.getInstance().startAutomaticCapture(0);
-    CameraServer.getInstance().startAutomaticCapture(1);
+    CameraServer.getInstance().startAutomaticCapture();
+    //compressor.start();
+   
   }
 
   /**
@@ -93,9 +94,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    autonomousCommand.start();
-    
-    
+    startTime = Timer.getFPGATimestamp();
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -113,12 +112,19 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Scheduler.getInstance().run();
-  
+    double time = Timer.getFPGATimestamp();
+
+    if (time - startTime <3 ){
+      Robot.driveTrain2.manualDrive(0.4, 0);
+    } else {
+      Robot.driveTrain2.manualDrive(0, 0);
+    }
+    
+
   }
 
   @Override
   public void teleopInit() {
-      autonomousCommand.cancel();
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
@@ -131,6 +137,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    
   }
 
   /**
